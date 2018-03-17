@@ -2,7 +2,7 @@
 
 PATH_TO_UPLOAD_SCRIPT="upload.py"
 
-FROM_DATE=`date -v-1w +%Y-%m-%d`
+FROM_DATE=`date --date '1 week ago' +%Y-%m-%d`
 TO_DATE=`date +%Y-%m-%d`
 
 mkdir .govpulse_download
