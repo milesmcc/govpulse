@@ -81,6 +81,7 @@ for file in args.files:
         if args.type == "speeches":
             to_add = process_speeches(data)
             print("Inserting %s new records..." % str(len(to_add)))
-            db.speeches.insert_many(to_add)
+            for item in to_add:
+                db.speeches.insert_one(item)
     except Exception as e:
         traceback.print_exc()
