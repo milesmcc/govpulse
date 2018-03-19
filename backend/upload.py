@@ -64,6 +64,7 @@ def process_speeches(data):
 
 import argparse
 import json
+import traceback
 
 parser = argparse.ArgumentParser()
 parser.add_argument("type", help="the type of data to upload", choices=["speeches"])
@@ -82,4 +83,4 @@ for file in args.files:
             print("Inserting %s new records..." % str(len(to_add)))
             db.speeches.insert_many(to_add)
     except Exception as e:
-        print(e)
+        traceback.print_exc()
